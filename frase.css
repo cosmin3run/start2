@@ -11,22 +11,51 @@
 #testoAlternato {
   margin: 30px;
   border: 1px solid grey;
-
   padding: 20px;
   font-family: "Bree Serif", serif;
   width: 400px;
+  display: inline-block;
+  /* position: absolute; */
+}
+.parole {
   position: relative;
 }
+.parole span {
+  position: absolute;
+  left: 10px;
+  width: 150px;
+}
+.parole span:nth-child(1) {
+  position: absolute;
+  color: rgb(101, 138, 156);
+  animation: roll 3s 0s infinite backwards;
+}
+.parole span:nth-child(2) {
+  position: absolute;
+  animation: roll 3s 1s infinite backwards;
+  color: rgb(101, 138, 156);
+}
+.parole span:nth-child(3) {
+  position: absolute;
+  animation: roll 3s 2s infinite backwards;
+  color: rgb(101, 138, 156);
+}
 
-.parole:nth-of-type(1) {
-  position: absolute;
-  color: rgb(101, 138, 156);
-}
-.parole:nth-of-type(2) {
-  position: absolute;
-  /* transform: translateX(30px); */
-  color: rgb(101, 138, 156);
-}
-.parole:nth-of-type(3) {
-  color: rgb(101, 138, 156);
+@keyframes roll {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  40% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  /* 70% {
+    transform: translateY(0);
+    opacity: 1;
+  } */
+  100% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
 }
